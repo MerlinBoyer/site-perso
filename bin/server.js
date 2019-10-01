@@ -55,11 +55,11 @@ var sess = {
     }
 }
 
-if (server.get('env') === 'production') {
-    console.log('PRODUCTION_ENV  :  enable securised session management')
-    server.set('trust proxy', 1) // trust first proxy
-    sess.cookie.secure = true    // serve secure cookies
-}
+// if (server.get('env') === 'production') {
+//     console.log('PRODUCTION_ENV  :  enable securised session management')
+//     server.set('trust proxy', 1) // trust first proxy
+//     sess.cookie.secure = true    // serve secure cookies
+// }
 
 // initSession if doesn't exist already
 
