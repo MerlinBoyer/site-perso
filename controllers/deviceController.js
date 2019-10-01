@@ -59,8 +59,8 @@ exports.testAlarm = (req, res, next) => {
                 } else {
                     var msg = {
                         to: friendResult.email,
-                        from: 'no-reply@myeli.com',
-                        subject: 'ALERTE GENERALE',
+                        from: 'no-reply@merlinboyer.fr',
+                        subject: 'Message',
                         text: 'alarm ?',
                         html: 'bonjour, une alarme a été détectée a ' + new Date().toLocaleTimeString() + '. cordialement'
                     };

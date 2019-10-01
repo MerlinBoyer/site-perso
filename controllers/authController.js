@@ -47,6 +47,7 @@ exports.sanitizeLogin = (req, res, next) => {
     }
 }
 
+
 exports.sanitizeRegister = (req, res, next) => {
 
     const errors = validationResult(req);
@@ -77,7 +78,7 @@ exports.onLogin = (req, res, next) => {
             req.session.user.isLogged = true
             res.redirect('/user/dashboard')
         } else {
-            req.flashError('error', 'mauvais identifiants')
+            req.flashError('error', 'Identifiants incorrects ou inconnus')
             res.redirect('/auth/login')
         }
     })
@@ -111,10 +112,10 @@ sendConfirmationEmail = (req, res, next) => {
 
                 var msg = {
                     to: req.session.user.email,
-                    from: 'no-reply@myeli.com',
+                    from: 'no-reply@merlinboyer.fr',
                     subject: 'please confirm your email',
                     text: 'alarm ?',
-                    html: 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/auth\/confirmation?token=' + token.token + '.\n'
+                    html: 'Confirmez votre email en cliquant sur le lien suivant : \nhttp:\/\/' + req.headers.host + '\/auth\/confirmation?token=' + token.token + '.\n'
                 };
 
                 console.log( 'apikey : ', process.env.SENDGRID_API_KEY )
