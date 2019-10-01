@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <% include ../../partials/head %>
+</head>
+
+<body class="container"></body>
+<header>
+    <% include ../../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Please confirm your email first</h1>
+        <form action="/auth/resend" method="POST">
+            Email: <input type="text" name="email"><br>
+            <button type=submit class="btn">Resend Email</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <% include ../../partials/footer %>
+</footer>
+
+</body>
+
+</html>

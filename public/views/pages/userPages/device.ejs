@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <% include ../../partials/head %>
+</head>
+
+<body class="container"></body>
+    <header>
+        <% include ../../partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Set your device id here : </h1>
+            <form action="/user/setDevice" method="POST">
+                deviceId: <input type="text" name="deviceId"><br>
+                <button type=submit class="btn">set Device Id</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <% include ../../partials/footer %>
+    </footer>
+
+</body>
+</html>

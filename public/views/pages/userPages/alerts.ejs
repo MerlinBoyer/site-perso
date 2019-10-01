@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <% include ../../partials/head %>
+</head>
+
+<body class="container"></body>
+    <header>
+        <% include ../../partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Set your friend email here : </h1>
+            <form action="/user/setFriend" method="POST">
+                friend email: <input type="text" name="friendEmail"><br>
+                <button type=submit class="btn">set friend email</button>
+            </form>
+        </div>
+
+        <form action="../device/testalarm" method="post">
+            deviceId: <input type="text" name="deviceId"><br>
+            <button type="submit" name="alarmtest" class="btn-link">Test alarm</button>
+        </form>
+    </main>
+    <p>last alarm : </p>
+    <%- JSON.stringify(last_alarm) %>
+
+    <footer>
+        <% include ../../partials/footer %>
+    </footer>
+
+</body>
+</html>
+

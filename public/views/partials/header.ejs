@@ -1,0 +1,67 @@
+<!-- views/partials/header.ejs -->
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<!-- Brand -->
+	<a class="navbar-brand" href="/">MyEli</a>
+
+	<!-- Links -->
+	<ul class="navbar-nav">
+		<li class="nav-item">
+			<a class="nav-link" href="/">Home</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/about">About</a>
+		</li>
+		<!-- new user case -->
+		<% if (!user.isLogged) { %>
+		<li class="nav-item">
+			<a class="nav-link" href="/auth/login">Login</a>
+		</li>
+		<!-- known user -->
+		<% } else { %>
+		<!-- Dropdown -->
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+				Mon compte
+			</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="/user/dashboard">Mon dashboard</a>
+				<a class="dropdown-item" href="/user/device">Connecter mon Bijou</a>
+				<a class="dropdown-item" href="/user/alerts">Gérer mes alertes</a>
+				<a class="dropdown-item" href="/user/account">Mon abonnement</a>
+			</div>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/auth/logout">Logout</a>
+		</li>
+		<% } %>
+
+	
+	</ul>
+
+</nav>
+
+<% if (locals.flash && locals.flash.errors) { %>
+<div class="alert text-center alert-danger alert-dismissible fade show" role="alert">
+	<% Object.keys(locals.flash.errors).forEach(key => { %>
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		<%= locals.flash.errors[key] %>
+	<% }) %>
+</div>
+<% } %>
+
+
+<% if (locals.flash && locals.flash.success) { %>
+	<div class="alert text-center alert-success alert-dismissible fade show" role="alert">
+		<% Object.keys(locals.flash.success).forEach(key => { %>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<%= locals.flash.success[key] %>
+		<% }) %>
+	</div>
+<% } %>
+
+

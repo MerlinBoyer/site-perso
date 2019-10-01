@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <% include ../../partials/head %>
+</head>
+
+<body class="container"></body>
+    <header>
+        <% include ../../partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Login Page </h1>
+            <div class="card">
+                <article class="card-body">
+                    <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
+                    <hr>
+                    <form method="POST" action="/auth/login">
+                    <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                         </div>
+                        <input name="email" class="form-control" placeholder="Email or login">
+                    </div> <!-- input-group.// -->
+                    </div> <!-- form-group// -->
+                    <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                         </div>
+                        <input class="form-control" placeholder="******" type="password" name="password">
+                    </div> <!-- input-group.// -->
+                    </div> <!-- form-group// -->
+                    <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+                    </div> <!-- form-group// -->
+                    <p class="text-center"><a href="/auth/register" class="btn">Register Instead ?</a></p>
+                    </form>
+                </article>
+            </div> <!-- card.// -->
+              
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../../partials/footer %>
+    </footer>
+
+</body>
+</html>
