@@ -156,11 +156,14 @@ class db {
         })
     }
 
+
+
     deleteAccount(email, cb){
         userModel.deleteOne({email: email}, (err) => {
             cb(err)
         })
     }
+    
 
 
 

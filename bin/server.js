@@ -55,6 +55,9 @@ var sess = {
     }
 }
 
+/*
+* ATTENTION : NECESSITE UN CERTIFICAT SSL
+*/
 // if (server.get('env') === 'production') {
 //     console.log('PRODUCTION_ENV  :  enable securised session management')
 //     server.set('trust proxy', 1) // trust first proxy

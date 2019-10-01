@@ -114,7 +114,7 @@ sendConfirmationEmail = (req, res, next) => {
                     from: 'no-reply@myeli.com',
                     subject: 'please confirm your email',
                     text: 'alarm ?',
-                    html: 'Please verify your account by clicking the link: \nhttps:\/\/' + req.headers.host + '\/auth\/confirmation?token=' + token.token + '.\n'
+                    html: 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/auth\/confirmation?token=' + token.token + '.\n'
                 };
 
                 console.log( 'apikey : ', process.env.SENDGRID_API_KEY )

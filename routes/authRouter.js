@@ -62,8 +62,6 @@ router.get('/notverified', function (req, res, next) {
 
 router.get('/confirmation', authController.onConfirmationPost)
 
-
-
 router.post('/resend', authController.onResendTokenPost)
 
 

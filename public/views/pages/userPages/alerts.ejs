@@ -12,6 +12,13 @@
 
 <main>
     <div class="jumbotron">
+        <h4>
+            Dans ce processus vous pouvez définir un code secret pour votre compte et un email cible. En envoyant ce code avec
+            une requête POST à l'API (<a href="/device/testalarm">http://www.merlinboyer.fr/device/testalarm</a>) avec votre 
+            code en parametre "deviceId", vous recevrez un email.
+        </h4>
+    </div>
+    <div class="jumbotron">
         <h2>1. Créez votre code secret :</h2>
         <form action="/user/setDevice" method="POST">
             votre code : <input type="text" name="deviceId" placeholder="ex: 1234"><br>
@@ -23,19 +30,19 @@
         <h2>2. Enregistrez le mail cible de votre choix :</h2>
         <form action="/user/setFriend" method="POST">
             adresse mail cible: <input type="text" name="friendEmail" placeholder="ex: moi-meme@adresse.com"><br>
-            <button type=submit class="btn">définir cette adresse !</button>
+            <button type=submit class="btn">Enregistrer cette adresse !</button>
         </form>
     </div>
 
     <div class="jumbotron">
         <h2>3. Envoyez votre code à l'API pour qu'elle contacte votre email cible :</h2>
         <form action="../device/testalarm" method="post">
-            code secret : <input type="text" name="deviceId" placeholder="ex: 1234"><br>
+            code perso : <input type="text" name="deviceId" placeholder="ex: 1234"><br>
             <button type="submit" name="alarmtest" class="btn">Go !</button>
         </form>
     </div>
 
-    
+
 </main>
 
 <footer>
