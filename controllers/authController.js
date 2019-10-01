@@ -167,7 +167,7 @@ exports.onResendTokenPost= (req, res, next) => {
     req.session.user.email = req.body.email
     sendConfirmationEmail(req, res, next)
 
-    res.redirect('/auth/login')
+    res.redirect('/auth/checkyouremailsfirst')
 }
 
 

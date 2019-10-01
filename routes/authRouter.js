@@ -58,6 +58,9 @@ router.get('/notverified', function (req, res, next) {
     res.render('pages/authPages/notVerified.ejs')
 })
 
+router.get('/checkyouremailsfirst', function (req, res, next) {
+    res.render('pages/authPages/checkyouremailsfirst.ejs')
+})
 
 
 router.get('/confirmation', authController.onConfirmationPost)
