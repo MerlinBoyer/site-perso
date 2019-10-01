@@ -48,13 +48,13 @@ exports.testAlarm = (req, res, next) => {
     db.findUserByDeviceId(deviceId, (userResult) => {
         console.log('user found : ', userResult)
         if (! userResult) {
-            req.flashError('no-corresponding-user', 'no corresponding user')
+            req.flashError('no-corresponding-user', 'Aucun utilsateur correspondant à ce code')
             res.redirect('/user/alerts')
         } else {
             db.findFriendByUser(userResult, (friendResult) => {
                 console.log('friend found : ', friendResult)
                 if (! friendResult) {
-                    req.flashError('no-corresponding-friend', 'no corresponding friend')
+                    req.flashError('no-corresponding-friend', 'Aucun email cible attaché à votre compte')
                     res.redirect('/user/alerts')
                 } else {
                     var msg = {
@@ -71,7 +71,7 @@ exports.testAlarm = (req, res, next) => {
                         });
 
                     console.log('alarm email send to : ', msg.to)
-                    req.flashSuccess('test-alarm', 'alarm send')
+                    req.flashSuccess('test-alarm', 'message envoyé !')
                     res.redirect('/user/alerts')
                 }
             })

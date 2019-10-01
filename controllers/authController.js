@@ -77,7 +77,7 @@ exports.onLogin = (req, res, next) => {
             req.session.user.isLogged = true
             res.redirect('/user/dashboard')
         } else {
-            req.flashError('error', 'wrong login credentials')
+            req.flashError('error', 'mauvais identifiants')
             res.redirect('/auth/login')
         }
     })
@@ -91,7 +91,7 @@ exports.onLogin = (req, res, next) => {
 
 sendConfirmationEmail = (req, res, next) => {
     if(!req.session.user.email) {
-        req.flashError('email-not-known', 'please provide your email')
+        req.flashError('email-not-known', 'vous devez renseigner un email')
         res.redirect('/auth/notVerified')
     }
     email = req.session.user.email
@@ -99,13 +99,13 @@ sendConfirmationEmail = (req, res, next) => {
     
     db.findUserByEmail(email, (user) => {
         if(!user) {
-            req.flashError('userunknown', 'email unknown')
+            req.flashError('userunknown', 'email inconnu')
             res.redirect('/auth/register')
         }
         let token = db.newToken( user )
         db.saveInstance(token, (err)=> {
             if (err) {
-                req.flashError('errorToken', 'c\'ant send validation email')
+                req.flashError('errorToken', 'echec de l\'envoi de l\'email de validation')
                 res.redirect('/auth/notVerified')
             } else {
 
@@ -138,13 +138,13 @@ exports.onRegister = (req, res) => {
     db.userExist(user, (result) => {
         if (result) {
             console.log('error user already exist')
-            req.flashError('error', 'user already exists')
+            req.flashError('error', 'cet utilisateur existe déjà')
             res.redirect('/auth/register')
         } else {
             db.saveInstance(user, (err) => {
                 if (err) {
                     console.log('onRegister error occured : ', err)
-                    req.flashError('error', 'c\'ant save user in db')
+                    req.flashError('error', 'Impossible de sauvegarder l\'utilisateur dans la base')
                     res.redirect('/auth/register')
                 } else {
                     req.session.user.isLogged = true
@@ -160,7 +160,7 @@ exports.onRegister = (req, res) => {
 exports.onResendTokenPost= (req, res, next) => {
 
     if(!req.body.email) {
-        req.flashError('emailnotknown', 'please provide your email')
+        req.flashError('emailnotknown', 'veuillez renseigner un email')
         res.redirect('/auth/notVerified')
     }
 
@@ -176,7 +176,7 @@ exports.onConfirmationPost= (req, res) => {
     var token = req.param('token')
 
     if(!token) {
-        req.flashError('token_expired', 'token has expired please resend confirmation email')
+        req.flashError('token_expired', 'Votre token a expiré, veuillez renvoyer un email de confirmation de compte')
         res.redirect('/auth/notVerified')
     }
 
@@ -185,7 +185,7 @@ exports.onConfirmationPost= (req, res) => {
 
     db.confirmEmail(token, (userResult) => {
         if(!userResult) {
-            req.flashError('email-validation-not-valid', 'your email verification has expired please try again')
+            req.flashError('email-validation-not-valid', 'Votre token a expiré, veuillez renvoyer un email de confirmation de compte')
             res.redirect('/auth/notVerified')
         } else {
             req.session.user = userResult

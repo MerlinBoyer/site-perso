@@ -44,14 +44,14 @@ exports.setFriend = (req, res, next) => {
     console.log('set friend email : ', friendEmail, ' to : ', email)
 
     if(!email || !friendEmail) {
-        req.flashError('friendEmail-missing', 'please provide your friend email')
+        req.flashError('friendEmail-missing', 'Veuillez renseigner l\'email cible')
         res.redirect('/user/alerts')
     }
         
     db.findUserByEmail(email, (user) => {
 
         if(!user) {
-            req.flashError('user-unknown', 'user unknown, please log again')
+            req.flashError('user-unknown', 'Utilisateur inconnu, veuillez réessayer')
             res.redirect('/auth/login')
         }
 
@@ -60,10 +60,10 @@ exports.setFriend = (req, res, next) => {
 
         db.saveInstance(friend, (err)=> {
             if (err) {
-                req.flashError('error-saveinstance-friend', 'Canno\'t save email')
+                req.flashError('error-saveinstance-friend', 'Impossible de sauvegarder cet email')
                 res.redirect('/user/alerts')
             } else {
-                req.flashSuccess('friend-set', 'Email has been updated')
+                req.flashSuccess('friend-set', 'Email mis à jour')
                 res.redirect('/user/alerts')
             }
         })
@@ -93,14 +93,14 @@ exports.setDevice = (req, res, next) => {
     console.log('set device id : ', deviceId, ' to : ', email)
 
     if(!email || !deviceId) {
-        req.flashError('deviceId-missing', 'please provide your secret code')
+        req.flashError('deviceId-missing', 'Veuillez renseigner votre code')
         res.redirect('/user/alerts')
     }
         
     db.findUserByEmail(email, (user) => {
 
         if(!user) {
-            req.flashError('user-unknown', 'user unknown, please log again')
+            req.flashError('user-unknown', 'Utilisateur inconnu ou session expirée, veuillez vous reconnecter')
             res.redirect('/auth/login')
         }
 
@@ -109,10 +109,10 @@ exports.setDevice = (req, res, next) => {
 
         db.saveInstance(device, (err)=> {
             if (err) {
-                req.flashError('error-saveinstance-device', 'unable to save your code')
+                req.flashError('error-saveinstance-device', 'Impossible de sauvegarder votre code, désolé')
                 res.redirect('/user/alerts')
             } else {
-                req.flashSuccess('device-set', 'Code has been updated')
+                req.flashSuccess('device-set', 'Votre code a été mis à jour')
                 res.redirect('/user/alerts')
             }
         })
@@ -123,9 +123,9 @@ exports.onDeleteAccount = (req,res,next) => {
     console.log('delete account : ', req.session.user.email)
     db.deleteAccount(req.session.user.email, (err)=>{
         if (err) {
-            req.flashError('error-saveinstance-device', 'unable to delete account')
+            //req.flashError('error-saveinstance-device', 'unable to delete account')
         } else {
-            req.flashSuccess('delete-account', 'Your account has been deleted')
+            req.flashSuccess('delete-account', 'Votre compte a été supprimé avec succès, au revoir !')
             res.redirect('/auth/logout')
         }
     })
