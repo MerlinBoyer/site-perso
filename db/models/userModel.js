@@ -14,7 +14,7 @@ var userSchema = new Schema({
   name: String,
   login: { type: String},
   email: { type: String, unique: true, required: true},
-  deviceId: { type: String, unique: true},
+  deviceId: { type: String },
   friends: [{ email: 'String' }],
   roles: [{ type: 'String' }],
   isVerified: { type: Boolean, default: false },

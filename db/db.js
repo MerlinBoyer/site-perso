@@ -2,9 +2,9 @@
 
 const mongoose = require('mongoose');
 
-var username = 'myeliadmin'
-var password = 'nlAm8fW7WG4k5cJs'
-var urimongoDB = "mongodb+srv://" + username + ":" + password + "@myelicluster-nmyoq.gcp.mongodb.net/test?retryWrites=true&w=majority"
+var username   = 'lambda_user'
+var password   = 'dUcPpq4wUx9Wb4hT'
+var urimongoDB = "mongodb+srv://" + username + ":" + password + "@clusterportfolio-asdvv.gcp.mongodb.net/test?retryWrites=true&w=majority"
 
 
 const crypto = require('crypto')
@@ -12,21 +12,13 @@ const crypto = require('crypto')
 
 var async = require('async')
 var deviceModel = require('./models/deviceModel')
-var userModel = require('./models/userModel')
+var userModel   = require('./models/userModel')
 var friendModel = require('./models/friendModel')
-var tokenModel = require('./models/tokenModel')
+var tokenModel  = require('./models/tokenModel')
 
 
 //Set up mongoose connection
 mongoose.connect(urimongoDB, { useNewUrlParser: true });
-
-
-
-
-
-var users = []
-var devices = []
-var friends = []
 
 
 class db {
