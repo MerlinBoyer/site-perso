@@ -156,6 +156,13 @@ class db {
         })
     }
 
+    deleteAccount(email, cb){
+        userModel.deleteOne({email: email}, (err) => {
+            cb(err)
+        })
+    }
+
+
 
     alarmRelay(deviceId, cb){
         // userModel.findOne({ deviceId: deviceId }, function (err, user) {
@@ -181,6 +188,8 @@ class db {
         //     })
         // })
     }
+
+    
 
 
 

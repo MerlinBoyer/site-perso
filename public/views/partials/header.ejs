@@ -2,37 +2,36 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 	<!-- Brand -->
-	<a class="navbar-brand" href="/">MyEli</a>
+	<a class="navbar-brand" href="/">Bienvenue !</a>
 
 	<!-- Links -->
 	<ul class="navbar-nav">
 		<li class="nav-item">
-			<a class="nav-link" href="/">Home</a>
+			<a class="nav-link" href="/">Acceuil</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/about">About</a>
+			<a class="nav-link" href="/portfolio">Portfolio</a>
 		</li>
 		<!-- new user case -->
 		<% if (!user.isLogged) { %>
 		<li class="nav-item">
-			<a class="nav-link" href="/auth/login">Login</a>
+			<a class="nav-link" href="/auth/login">Un petit test ?</a>
 		</li>
 		<!-- known user -->
 		<% } else { %>
 		<!-- Dropdown -->
 		<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-				Mon compte
+				Onglet secret
 			</a>
 			<div class="dropdown-menu">
-				<a class="dropdown-item" href="/user/dashboard">Mon dashboard</a>
-				<a class="dropdown-item" href="/user/device">Connecter mon Bijou</a>
-				<a class="dropdown-item" href="/user/alerts">Gérer mes alertes</a>
-				<a class="dropdown-item" href="/user/account">Mon abonnement</a>
+				<a class="dropdown-item" href="/user/dashboard">Dashboard</a>
+				<a class="dropdown-item" href="/user/alerts">Encore un test ?</a>
+				<a class="dropdown-item" href="/user/account">Effacer mon compte</a>
 			</div>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/auth/logout">Logout</a>
+			<a class="nav-link" href="/auth/logout">Déconnexion</a>
 		</li>
 		<% } %>
 

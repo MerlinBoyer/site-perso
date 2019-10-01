@@ -62,4 +62,7 @@ router.post('/setDevice',[
 )
 
 
+router.post('/delete_account', userController.onDeleteAccount)
+
+
 module.exports = router;

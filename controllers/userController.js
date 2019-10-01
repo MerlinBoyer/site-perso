@@ -56,14 +56,14 @@ exports.setFriend = (req, res, next) => {
         }
 
         let friend = db.newFriend( user, friendEmail, friendPhone )
-        console.log('try to save friend : ', friend)
+        console.log('try to save email : ', friend)
 
         db.saveInstance(friend, (err)=> {
             if (err) {
-                req.flashError('error-saveinstance-friend', 'c\'ant save friend')
+                req.flashError('error-saveinstance-friend', 'Canno\'t save email')
                 res.redirect('/user/alerts')
             } else {
-                req.flashSuccess('friend-set', 'Friend has been updated')
+                req.flashSuccess('friend-set', 'Email has been updated')
                 res.redirect('/user/alerts')
             }
         })
@@ -93,8 +93,8 @@ exports.setDevice = (req, res, next) => {
     console.log('set device id : ', deviceId, ' to : ', email)
 
     if(!email || !deviceId) {
-        req.flashError('deviceId-missing', 'please provide your deviceId')
-        res.redirect('/user/device')
+        req.flashError('deviceId-missing', 'please provide your secret code')
+        res.redirect('/user/alerts')
     }
         
     db.findUserByEmail(email, (user) => {
@@ -105,16 +105,28 @@ exports.setDevice = (req, res, next) => {
         }
 
         let device = db.newDevice( user, deviceId )
-        console.log('try to save device : ', device)
+        console.log('try to save code : ', device)
 
         db.saveInstance(device, (err)=> {
             if (err) {
-                req.flashError('error-saveinstance-device', 'c\'ant save device Id')
-                res.redirect('/user/device')
+                req.flashError('error-saveinstance-device', 'unable to save your code')
+                res.redirect('/user/alerts')
             } else {
-                req.flashSuccess('device-set', 'Device has been updated')
-                res.redirect('/user/device')
+                req.flashSuccess('device-set', 'Code has been updated')
+                res.redirect('/user/alerts')
             }
         })
+    })
+}
+
+exports.onDeleteAccount = (req,res,next) => {
+    console.log('delete account : ', req.session.user.email)
+    db.deleteAccount(req.session.user.email, (err)=>{
+        if (err) {
+            req.flashError('error-saveinstance-device', 'unable to delete account')
+        } else {
+            req.flashSuccess('delete-account', 'Your account has been deleted')
+            res.redirect('/auth/logout')
+        }
     })
 }

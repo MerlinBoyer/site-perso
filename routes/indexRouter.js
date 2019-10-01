@@ -33,8 +33,8 @@ router.get('/', function (req, res, next) {
 
 
 
-router.get('/about', function (req, res, next) {
-	res.render('pages/about.ejs', {
+router.get('/portfolio', function (req, res, next) {
+	res.render('pages/portfolio.ejs', {
 		user: req.session.user
 	});
 });
