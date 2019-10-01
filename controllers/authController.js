@@ -36,9 +36,11 @@ exports.sanitizeLogin = (req, res, next) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
+        console.log('errors san log: \n', errors.errors)
         errors.errors.forEach(err => {
             req.flashError(err.param, err.msg)
         })
+        
         res.redirect('/auth/login')
     } else {
         next()
@@ -48,8 +50,9 @@ exports.sanitizeLogin = (req, res, next) => {
 exports.sanitizeRegister = (req, res, next) => {
 
     const errors = validationResult(req);
-
+    
     if (!errors.isEmpty()) {
+        console.log('errors san log: \n', errors.errors)
         errors.errors.forEach(err => {
             req.flashError(err.param, err.msg)
         })
