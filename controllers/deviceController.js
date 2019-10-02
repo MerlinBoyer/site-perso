@@ -11,7 +11,7 @@ var msg = {
   from: 'merlin.byr@gmail.com',
   subject: 'ALERTE GENERAAAAL',
   text: 'alarm ?',
-  html: 'bonjour, une alarme a été détectée a ' + new Date().toLocaleTimeString() + '. cordialement'
+  html: 'bonjour, une alarme a été détectée a ' + new Date().toLocaleTimeString() + ' (GTM+0). cordialement'
 };
 
 
@@ -62,7 +62,7 @@ exports.testAlarm = (req, res, next) => {
                         from: 'no-reply@merlinboyer.fr',
                         subject: 'Message',
                         text: 'alarm ?',
-                        html: 'bonjour, une alarme a été détectée a ' + new Date().toLocaleTimeString() + '. cordialement'
+                        html: 'bonjour, une alarme a été détectée a ' + new Date().toLocaleTimeString() + '(GTM+0). cordialement'
                     };
         
                     sgMail.send(msg)
