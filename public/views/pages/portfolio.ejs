@@ -2,16 +2,248 @@
 <html lang="fr">
 <head>
     <% include ../partials/head %>
+    <!-- inclusion du css-->
+    <link rel="stylesheet" href="../views/css/monStyle.css"/>
 </head>
 
 <body class="container"></body>
     <header>
         <% include ../partials/header %>
+        
     </header>
 
     <main>
-        <div class="jumbotron">
-            <h1>Page du portfolio</h1>
+        
+        <div class="page">
+    
+    
+        
+
+            <div class="section infos">
+    
+                    <div class="photo">
+                        <img src="../views/img/photo_cv.jpg" alt="This is a Corgi" class="cv-photo">
+                    </div> 
+                    <div class="infos-perso">
+                            <h1 id="mon-nom">Merlin Boyer</h1>
+                        <p>
+                        <br>Ingénieur étude et développement JAVA EE
+                        <br>23 ans
+                        <br>boyer.merlin@gmail.com
+                        <br>06 82 11 91 74
+                        </p>
+                    </div>
+            </div>
+    
+            <div class="section presentation">
+                <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;En parallèle de ma formation d'ingénieur roboticien, je me suis interressé
+                        aux technologies web et j'ai suivi une formation pour devenir
+                        ingénieur en études et développement en JAVA EE. Vous pouvez trouver 
+                        <a href="../resources/CV_MerlinBoyer.pdf">mon CV ici</a>.
+                </p>
+            </div>
+            
+            
+            <div class="section">
+                <h2 class="section-title">Cursus Scolaire</h2>
+    
+                <hr/>
+                <div class="left-text">
+                    <p>2014</p>
+                    <p>2014 - 2016</p>
+                    <p>2016 - 2019</p>
+                    <p><br>2019</p>
+                </div>
+                <div class="right-text">
+                    <p><span class="titre">Bacchalauréat Scientifique</span> - mention Bien</p>
+                    <p><span class="titre">Classes préparatoires aux grandes écoles</span>, section Physique et Chime</p>
+                    <p><span class="titre">Diplôme ingénieur électronicien, </span> spécialité robotique et apprentissage, à l'ENSEIRB MATMECA à Bordeaux</p>
+                    <p><span class="titre">Formation Architecte numérique Java EE </span> chez Adaming à Mérignac </p>
+                </div>
+            </div>
+    
+    
+            <div class="section">
+                <h2 class="section-title">Experience professionnelle</h2>
+    
+                <hr/>
+                <div class="left-text">
+                    <p>2017 <br> <span class="duree">4 semaines</span> </p>
+                    <p>2018 <br> <span class="duree">12 semaines</span> </p>
+                    <p style="visibility: hidden; height: 10px;">ouiouio</p>
+                    <p>2019 <br> <span class="duree">22 semaines</span> </p>
+                </div>
+                <div class="right-text">
+                    <p><span class="titre">Stage ouvrier de première année.</span><span class="context"> Esterline, Niort, France.</span><br>
+                        <i>Réalisation d'un programme sous Labview au bureau d'étude.</i>
+                    </p>
+    
+                    <p><span class="titre">Stage professionnel de deuxième année.</span><span class="context"> Ho Chi Minh, Vietnam, à Siclo Mobile Vietnam, entreprise de développement Web et IoT.</span>
+                    <br><i>Développeur et ingénieur au sein d'une équipe de développement de capteurs connectés.</i>
+                    </p>
+    
+                    <p><span class="titre">Stage de fin d'études.</span> <span class="context">Bordeaux, à l'IMS, Laboratoire de l'Intégration du Matériau au Système, département Traitement de l'Image.</span>
+                    <br><i>Labellisation de structures irrégulières (superpixels) à partir de descripteurs hétérogènes ayant abouti
+                         à la soumission d'un article.</i>
+                    </p>
+                </div>
+            </div>
+    
+    
+            <div class="section">
+                <h2 class="section-title">Projets Scolaires</h2>
+                <hr/>
+                <div class="left-text">
+                    <p>Horloge à persistence <br> rétinienne </p>
+                    <p>Commande AGV</p>
+                    <p><br><br>Robot suiveur de <br>ligne</p>
+                    <p>VHDL</p>
+                    <p>Electronique</p>
+                    <p>Imagerie</p>
+                </div>
+                <div class="right-text">
+                    <p>Programmation en C d'un microcontroleur <i>ATmega328</i> pour réaliser l'affichage de l'heure
+                        à l'aide d'une rangée de leds motorisée et controlé par module bluetooth.
+                    </p>
+    
+                    <p>Conception d'un module de commande pour robot <i>AGV</i> pour l'entreprise <a href="https://aio.eu">AIO</a>. 
+                        Le module est une carte wifi Arduino <i>ESP8266</i> reliée à une application mobile (<i>Ionic</i>)
+                         permettant d'afficher l'état du robot et de sélectionner un parcours à effectuer.
+                    </p>
+    
+                    <p>Conception et construction d'un robot autonome suiveur de ligne (<i>Raspberry, Python, OpenCV, conception mécanique</i>)</p>
+    
+                    <p>Réalisation d'un jeu utilisant un écran OledRGB et un joystick (<i>VHDL</i>)</p>
+    
+                    <p>Conception d’un circuit d’asservissement d’une diode LASER et d’un amplificateur audio</p>
+    
+                    <p>Réalisation d’un programme sous Matlab permettant d’identifier les chiffres d’un compteur de 
+                        gaz sur une photo prise par une caméra montée sur une Raspberry</p>
+                </div>
+            </div>
+    
+    
+            <div class="section">
+                <h2 class="section-title">Projets Personnels</h2>
+                <hr/>
+                <div class="left-text">
+                    <p>Création de ce <br> site web </p>
+                    <p>Start-up : <br>Puce connectée <br> LoRaWAN </p>
+                    <p><br>Web Scraping</p>
+                    <p><br>Site Web php</p>
+                    <p>Jeu multijoueur</p>
+                    <p>Chat temps réel</p>
+                    <p><br>BDE</p>
+                    <p><br>BAFA et Scoutisme</p>
+                </div>
+                <div class="right-text">
+    
+                    <p><span class="context"> Développé en NodeJS (ExpressJS) et hébergé sur la plateforme Heroku avec une redirection DNS
+                            sur le nom de domaine.</span><br>
+                    </p>
+    
+                    <p><span class="context"> Implémentation du protocole de communication LoRaWAN sur une puce LoRa SX1272 pour utiliser le réseau
+                            Objenious de Bouygues Telecom afin de recevoir les coordonées GPS de la puce par email lors d'un appuis sur un déclencheur physique.
+                            Ce projet a été mené pendant 1 an dans l'objectif de monter une startup mais a malheureusement du être avorté.
+                        </span><br>
+                    </p>
+    
+                    <p><span class="context"> Réalisation d'un script de web scraping en NodeJS afin de récupérer automatiquement
+                            des informations (photos + descriptions) issus de galeries d'oeuvres d'art du site Christies.
+                        </span><br>
+                    </p>
+    
+                    <p><span class="context"> Participation à la réalisation d'un site en PHP avec la junior entreprise de l'ENSEIRB MATMECA.
+                        </span><br>
+                    </p>
+    
+                    <p> <span class="context"> Conception d'un jeu multijoueur en réseau (type bomberman) en NodeJS + javascript.
+                        </span><br>
+                    </p>
+    
+                    <p> <span class="context"> Conception d'une petite application de chat en temps réel (NodeJS + Socket.io).
+                        </span><br>
+                    </p>
+    
+                    <p><span class="context"> <br>Responsable logistique du Bureau Des Élèves de l'ENSEIRB-MATMECA (mandat 2017 - 2018).
+                        </span><br>
+                    </p>
+    
+                    <p> <span class="context"> <br>Titulaire du Brevet d'Aptitudes aux Fonctions d'Animateur : encadrement de colonies de vacances.
+                                <br>Chef scout à Bordeaux : Encadrement de mineurs, participation à des projets humanitaires.
+                        </span><br>
+                    </p>
+    
+                </div>
+            </div>
+    
+    
+            <div class="section">
+                <h2 class="section-title">Détails Formation Adaming (Oct 2019 -Jan 2020) </h2>
+    
+                <hr/>
+                <div class="left-text">
+                    <p> Oct. 2019 <br> <span class="duree">12 semaines</span></p>
+                </div>
+                <div class="right-text">
+                    <p>Contenu de la formation JAVA EE : </p>
+                    <ul>
+                        <li> Enjeux et Etat de l’art </li>
+                        <li> UML : Les Concepts Objets </li>
+                        <li> JAVA : Les fondamentaux </li>
+                        <li> Les Design Patterns </li>
+                        <li> Le développement Front end : </li>
+                        <ul>
+                            <li> Html </li>
+                            <li> CSS </li>
+                            <li> Bootstrap </li>
+                            <li> Javascript </li>
+                            <li> Jquery </li>
+                            <li> Angular 7 </li>
+                            <li> Node JS </li>
+                            <li> TypeScript </li>
+                        </ul>
+                        <li>Le Framework JEE et son ecosystem:</li>
+                        <ul>
+                            <li> JSP </li>
+                            <li> SEVLETS/JSTL/EL </li>
+                            <li> JSF </li>
+                            <li> SPRING </li>
+                            <li> Spring BATCH </li>
+                            <li> Spring SECURITY </li>
+                            <li> Spring MVC </li>
+                            <li> Spring DATA </li>
+                        </ul>
+                        <li> Language XML :</li>
+                        <ul>
+                            <li> JAXB </li>
+                            <li> XSD </li>
+                            <li> XSL </li>
+                        </ul>
+                        <li> Les services et SOA : </li>
+                        <ul>
+                            <li> JAX-RS</li>
+                            <li> JAX-WS</li>
+                            <li>  Architecture REST</li>
+                        </ul>
+                        <li> Les ORM et SGBD</li>
+                        <ul>
+                            <li> Mysql / Oracle</li>
+                            <li> PL/SQL, JPQL, HQL</li>
+                            <li> JPA</li>
+                            <li> Hibernate</li>
+                        </ul>
+                        <li> Outils : GIT, Sonar, Jenkins, Maven</li>
+                        <li> IDE : Eclipse, Mysql Workbench</li>
+                        <li> Génie Logiciel : La Qualité Logiciel</li>
+                        <li> Méthodes Agiles : XP, Agile (SCRUM / KANBAN), DevOps</li>
+                        <li> PROJET : Développement d’application Java JEE</li>
+                        <li> Tests : JUNIT, Selenium</li>
+                    </ul>
+                </div>
+            </div>
+    
         </div>
     </main>
 
