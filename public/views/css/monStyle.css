@@ -13,7 +13,7 @@
 
 .page {
     color: rgb(43, 47, 48);
-    width: 60%;
+    width: 100%;
     margin: auto;
     font-size: 16px;
     background-color: aliceblue;
@@ -29,13 +29,14 @@
     position: absolute;
     width: 450px;
     top: 50%;
-    left: 10%;
+    left: 20%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
 .presentation {
     text-align: center;
+    padding: 0% 10% 0% 10%;
 }
 
 .duree {
@@ -44,7 +45,7 @@
 
 .photo {
     float: right;
-    margin-right: 5%;
+    margin-right: 20%;
 }
 
 .cv-photo {
@@ -71,7 +72,7 @@
 .triangle-right {
     width: 0;
     height: 0;
-    margin: 15px 0px 0px 25px;
+    margin: 10px 0px 0px 25px;
     border-top: 10px solid transparent;
     border-left: 20px solid #555;
     border-bottom: 10px solid transparent;
